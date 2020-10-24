@@ -1,0 +1,21 @@
+<section id="pesquisa">
+    <div style="top: 0px; font-size: 50px; height: 200px;" class="">
+        Resultado da Pesquisa
+    </div>
+    <div *ngIf="dados" class="d-flex justify-content-around col-md-12">
+        <table>
+            <tr>
+               <th>Ano da descoberta</th>
+               <th>Metodo de descoberta</th>
+               <th>Nome do host</th>
+               <th>Local da descoberta</th>
+            </tr>
+            <tr *ngFor="let dado of dados">
+                <td>{{dado["pl_disc"]}}</td>
+                <td>{{dado["pl_discmethod"]}}</td>
+                <td>{{dado["pl_name"]}}</td>
+                <td>{{dado["pl_facility"]}}</td>
+            </tr>
+        </table>
+    </div>
+</section>

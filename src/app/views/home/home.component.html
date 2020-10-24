@@ -1,0 +1,45 @@
+<section id="home">
+  <div style="top: 0px; font-size: 50px; height: 200px;" class="">
+      Exoplanets
+  </div>
+  <div class="d-flex justify-content-around col-md-12">
+      <div class="row col-md-12">
+          <div id="contagem" class="col-md-6 d-flex flex-column justify-content-center align-items-center">
+              <span style="font-size: 25px; color:darkturquoise; ">Total de Exoplanetas confirmados:</span><br/>
+              <span style="font-size: 150px; color:aquamarine; ">{{contExoplanetasconfirmados}}</span>
+          </div>
+          <div id="menu" class="col-md-6 d-flex align-items-center d-flex justify-content-center">
+              <form [formGroup]="pesquisarForm">
+                  <div class="form-row">
+                    <div class="form-group col-md-5">
+                      <label for="ano">Ano da descoberta</label>
+                      <input type="number" formControlName="ano" name="ano" class="form-control" id="ano">
+                    </div>
+                    <div class="form-group col-md-7">
+                      <label for="metodo">Metodo de descoberta</label>
+                      <select class="form-control" id="metodo" formControlName="metodo" name="metodo">
+                        <option value="">--Selecione--</option>
+                        <option *ngFor="let metodo of listaMetodoDisc" [value]="metodo">{{metodo}}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="nome">Nome do host</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome" name="nome">
+                  </div>
+                  <div class="form-group">
+                    <label for="local">Local da descoberta</label>
+                    <select class="form-control" id="local" formControlName="local" name="local">
+                      <option value="">--Selecione--</option>
+                      <option *ngFor="let local of listaLocalDisc" [value]="local">{{local}}</option>
+                    </select>
+                  </div>
+                  <div class="d-flex justify-content-around">
+                    <button type="submit" (click)="pesquisar()" class="btn btn-outline-info">Pesquisar</button>
+                    <button type="reset" class="btn btn-outline-light">Limpar campos</button>
+                  </div>
+                </form>
+          </div>
+      </div>
+  </div>
+</section>
